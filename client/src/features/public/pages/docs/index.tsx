@@ -41,7 +41,7 @@ const DocsPage: FC = () => {
           </div>
 
           {/* Main Content Sections */}
-          <div className="lg:col-span-2">
+          <div className="[&>section]:scroll-mt-24 lg:col-span-2">
             <GettingStartedSection />
             <InstallationSection />
             <ProjectStructureSection />
