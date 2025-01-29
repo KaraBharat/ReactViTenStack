@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 
 // Utils
-import { formatDateRange } from "@/lib/utils";
+import { formatDateRange } from "@/lib/date-utils";
 import { DateRange } from "react-day-picker";
 
 interface DateRangePickerProps {

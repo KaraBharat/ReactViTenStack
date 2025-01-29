@@ -1,5 +1,4 @@
 import { clsx, type ClassValue } from "clsx";
-import { format } from "date-fns";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -15,33 +14,6 @@ export const handleApiError = (error: unknown): never => {
   }
   throw new Error("An unknown error occurred");
 };
-
-type Period = {
-  from: string | Date | undefined;
-  to: string | Date | undefined;
-};
-
-export function formatDateRange(period?: Period) {
-  if (!period?.from || !period?.to) {
-    return "Select Date Range";
-  }
-
-  if (!period?.to) {
-    return `${format(period.from, "LLL dd")} - ${format(
-      period.from,
-      "LLL dd, y",
-    )}`;
-  }
-
-  if (period.to) {
-    return `${format(period.from, "LLL dd")} - ${format(
-      period.to,
-      "LLL dd, y",
-    )}`;
-  }
-
-  return `${format(period.from, "LLL dd, y")}`;
-}
 
 type OptimisticOperation = "create" | "update" | "delete" | undefined;
 export const getRowClassName = ({

@@ -12,6 +12,7 @@ import { VALID_TODO_SORT_FIELDS } from "@server/src/types/todos.types";
 import { useTodos } from "../queries/todos.get.queries";
 import { useDeleteTodosBulk } from "../queries/todos.delete.queries";
 import { DEFAULT_FILTERS } from "../queries/todos.queries";
+import { convertToUTC } from "@/lib/date-utils";
 
 /**
  * Custom hook for managing todos page functionality
@@ -51,6 +52,10 @@ const useTodosPage = () => {
     isFetchingNextPage,
   } = useTodos({
     ...filters,
+    fromdue: convertToUTC(filters.fromdue),
+    todue: convertToUTC(filters.todue),
+    fromcompleted: convertToUTC(filters.fromcompleted),
+    tocompleted: convertToUTC(filters.tocompleted),
     pageSize: DEFAULT_PAGE_SIZE,
     ...sortParams,
   });
