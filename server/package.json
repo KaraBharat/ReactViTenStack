@@ -1,0 +1,37 @@
+{
+  "name": "server",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/app.ts",
+    "build": "pnpm run clean && tsc && tsc-alias",
+    "start": "node dist/src/app.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "@hono/zod-validator": "^0.4.2",
+    "@neondatabase/serverless": "^0.10.4",
+    "@vercel/node": "^5.0.2",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.38.4",
+    "drizzle-zod": "^0.6.1",
+    "hono": "^4.6.16",
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "typescript": "^5.7.3",
+    "@types/jsonwebtoken": "^9.0.7",
+    "drizzle-kit": "^0.30.2",
+    "nodemon": "^3.1.9",
+    "tsx": "^4.19.2",
+    "tsc-alias": "^1.8.10"
+  }
+}

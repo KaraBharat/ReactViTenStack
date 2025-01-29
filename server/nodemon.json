@@ -1,0 +1,6 @@
+{
+  "watch": ["src/**/*", "../shared/src/**/*"],
+  "ext": "ts",
+  "ignore": ["dist"],
+  "exec": "tsx src/app.ts"
+}
