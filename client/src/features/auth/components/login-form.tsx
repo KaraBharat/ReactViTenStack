@@ -48,7 +48,6 @@ export const LoginForm = () => {
                   autoComplete="email"
                   className={inputStyles}
                   aria-label="Email address"
-                  required
                   {...field}
                 />
               </FormControl>
@@ -70,7 +69,6 @@ export const LoginForm = () => {
                   autoComplete="current-password"
                   className={inputStyles}
                   aria-label="Password"
-                  required
                   {...field}
                 />
               </FormControl>
