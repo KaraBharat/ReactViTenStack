@@ -1,37 +1,32 @@
 // External imports
 import { ArrowRight, GitFork, Star } from "lucide-react";
 
-/**
- * GettingStartedSection Component
- * Renders the Getting Started section of the documentation page
- * Features a comprehensive overview of the full-stack template capabilities
- * and quick access links to GitHub and documentation
- */
 export const GettingStartedSection = () => {
-  // GitHub repository URL from environment variables
   const githubRepoUrl = import.meta.env.VITE_GITHUB_REPO_URL || "#";
 
   return (
-    <section id="getting-started" className="mb-12">
+    <section id="getting-started" className="mb-8 sm:mb-12">
       {/* Section Header */}
-      <h2 className="mb-4 text-2xl font-bold text-neutral-950">
+      <h2 className="mb-3 text-xl font-bold text-neutral-950 sm:mb-4 sm:text-2xl">
         Getting Started
       </h2>
 
       {/* Main Content Card */}
-      <div className="mb-6 rounded-lg border border-neutral-100 bg-white p-6">
-        <h3 className="mb-4 text-lg font-semibold text-neutral-950">
+      <div className="mb-4 rounded-lg border border-neutral-100 bg-white p-4 sm:mb-6 sm:p-6">
+        <h3 className="mb-3 text-base font-semibold text-neutral-950 sm:mb-4 sm:text-lg">
           Modern Full Stack Starter Template
         </h3>
-        <p className="mb-4 text-neutral-600">
+        <p className="mb-4 text-sm text-neutral-600 sm:text-base">
           A full-stack TypeScript monorepo starter template featuring:
         </p>
 
         {/* Features Grid */}
-        <div className="mb-6 grid gap-6 md:grid-cols-2">
-          <div>
-            <h4 className="mb-2 font-medium text-neutral-950">Frontend</h4>
-            <ul className="list-inside list-disc space-y-1 text-sm text-neutral-600">
+        <div className="mb-4 grid gap-4 sm:mb-6 sm:grid-cols-1 sm:gap-6 md:grid-cols-2">
+          <div className="space-y-2">
+            <h4 className="mb-1 font-medium text-neutral-950 sm:mb-2">
+              Frontend
+            </h4>
+            <ul className="list-inside list-disc space-y-1 text-xs text-neutral-600 sm:text-sm">
               <li>React</li>
               <li>Vite</li>
               <li>TanStack Router, Query & Table</li>
@@ -39,9 +34,11 @@ export const GettingStartedSection = () => {
               <li>Tailwind CSS</li>
             </ul>
           </div>
-          <div>
-            <h4 className="mb-2 font-medium text-neutral-950">Backend</h4>
-            <ul className="list-inside list-disc space-y-1 text-sm text-neutral-600">
+          <div className="space-y-2">
+            <h4 className="mb-1 font-medium text-neutral-950 sm:mb-2">
+              Backend
+            </h4>
+            <ul className="list-inside list-disc space-y-1 text-xs text-neutral-600 sm:text-sm">
               <li>Hono.js</li>
               <li>DrizzleORM</li>
               <li>Neon Database</li>
@@ -49,11 +46,11 @@ export const GettingStartedSection = () => {
               <li>PNPM Workspaces</li>
             </ul>
           </div>
-          <div>
-            <h4 className="mb-2 font-medium text-neutral-950">
+          <div className="space-y-2">
+            <h4 className="mb-1 font-medium text-neutral-950 sm:mb-2">
               Authentication (Basic)
             </h4>
-            <ul className="list-inside list-disc space-y-1 text-sm text-neutral-600">
+            <ul className="list-inside list-disc space-y-1 text-xs text-neutral-600 sm:text-sm">
               <li>JWT</li>
               <li>Password Hashing</li>
               <li>Session Management</li>
@@ -61,9 +58,11 @@ export const GettingStartedSection = () => {
               <li>Email Verification & Reset Password (Coming Soon)</li>
             </ul>
           </div>
-          <div>
-            <h4 className="mb-2 font-medium text-neutral-950">Deployment</h4>
-            <ul className="list-inside list-disc space-y-1 text-sm text-neutral-600">
+          <div className="space-y-2">
+            <h4 className="mb-1 font-medium text-neutral-950 sm:mb-2">
+              Deployment
+            </h4>
+            <ul className="list-inside list-disc space-y-1 text-xs text-neutral-600 sm:text-sm">
               <li>Vercel Edge Functions</li>
               <li>Cloudflare (Coming Soon)</li>
             </ul>
@@ -72,30 +71,30 @@ export const GettingStartedSection = () => {
       </div>
 
       {/* Action Buttons */}
-      <div className="flex flex-col gap-4 md:flex-row">
+      <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
         <a
           href="/docs#installation"
-          className="inline-flex items-center gap-2 rounded-full bg-neutral-950 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-neutral-950 px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-neutral-800 sm:px-6 sm:text-sm"
         >
           Quick Start Guide
-          <ArrowRight className="h-4 w-4" />
+          <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
         </a>
         <a
           href={githubRepoUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-neutral-200 px-6 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-50"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-200 px-4 py-2 text-xs font-medium text-neutral-600 transition-colors hover:bg-neutral-50 sm:px-6 sm:text-sm"
         >
-          <GitFork className="h-4 w-4" />
+          <GitFork className="h-3 w-3 sm:h-4 sm:w-4" />
           Fork on GitHub
         </a>
         <a
           href={githubRepoUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-neutral-200 px-6 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-50"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-200 px-4 py-2 text-xs font-medium text-neutral-600 transition-colors hover:bg-neutral-50 sm:px-6 sm:text-sm"
         >
-          <Star className="h-4 w-4" />
+          <Star className="h-3 w-3 sm:h-4 sm:w-4" />
           Star on GitHub
         </a>
       </div>

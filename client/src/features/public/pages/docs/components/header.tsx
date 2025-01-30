@@ -18,7 +18,7 @@ export const DocsHeader = () => {
             Documentation
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-neutral-600">
-            Learn how to get started with our starter template and explore its
+            Learn how to get started with ReactViTenStack and explore its
             features.
           </p>
         </div>
