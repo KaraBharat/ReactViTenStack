@@ -16,3 +16,4 @@ A full-stack React starter template with Vite, Tanstack Suite, Shadcn UI, HonoJs
 - [Configuration](https://reactvitenstack.vercel.app/docs#configuration)
 - [Development](https://reactvitenstack.vercel.app/docs#development)
 - [Deployment](https://reactvitenstack.vercel.app/docs#deployment)
+- [Package Management](https://reactvitenstack.vercel.app/docs#package-management)
