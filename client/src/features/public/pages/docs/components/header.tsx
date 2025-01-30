@@ -14,7 +14,7 @@ export const DocsHeader = () => {
         {/* Content wrapper with centered layout */}
         <div className="flex flex-col items-center text-center">
           <BookOpen className="mb-6 h-12 w-12 text-neutral-950" />
-          <h1 className="mb-6 bg-gradient-to-r from-neutral-950 to-neutral-950 bg-clip-text text-4xl font-bold text-transparent sm:text-5xl">
+          <h1 className="mb-6 bg-gradient-to-r from-neutral-950 to-neutral-950 bg-clip-text text-2xl font-bold text-transparent md:text-4xl">
             Documentation
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-neutral-600">

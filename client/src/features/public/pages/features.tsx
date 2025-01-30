@@ -9,11 +9,11 @@ const FeaturesPage = () => {
         <div className="container mx-auto px-4 py-16">
           <div className="flex flex-col items-center text-center">
             <h2 className="relative mb-4">
-              <span className="text-4xl font-black text-gray-900 sm:text-5xl">
+              <span className="text-2xl font-black text-gray-900 md:text-4xl">
                 Powerful Features for
               </span>
               <br />
-              <span className="bg-gradient-to-r from-neutral-950 to-neutral-950 bg-clip-text text-4xl font-black text-transparent sm:text-5xl">
+              <span className="bg-gradient-to-r from-neutral-950 to-neutral-950 bg-clip-text text-2xl font-black text-transparent md:text-4xl">
                 Modern Development
               </span>
               <div className="absolute -bottom-4 left-1/2 h-2 w-24 -translate-x-1/2 rounded-full bg-gradient-to-r from-neutral-200 to-neutral-200"></div>

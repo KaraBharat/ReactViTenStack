@@ -21,7 +21,7 @@ const LandingPage = () => {
             <div className="mb-6 flex gap-2">
               <Rocket className="h-12 w-12 text-neutral-950" />
             </div>
-            <h1 className="mb-6 bg-gradient-to-r from-stone-950 to-neutral-950 bg-clip-text text-5xl font-bold text-transparent sm:text-6xl">
+            <h1 className="mb-6 bg-gradient-to-r from-stone-950 to-neutral-950 bg-clip-text text-3xl font-bold text-transparent md:text-5xl">
               Modern Full-Stack
               <br />
               Starter Template
@@ -30,10 +30,10 @@ const LandingPage = () => {
               Ready to use stack featuring Vite, React, TanStack, Shadcn, and
               more.
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-col gap-4 md:flex-row">
               <Link
                 to="/docs"
-                className="flex items-center gap-2 rounded-full bg-neutral-950 px-6 py-3 text-white transition hover:bg-neutral-900"
+                className="flex items-center justify-center gap-2 rounded-full bg-neutral-950 px-6 py-3 text-white transition hover:bg-neutral-900"
               >
                 Get Started <ArrowRight className="h-4 w-4" />
               </Link>
@@ -41,7 +41,7 @@ const LandingPage = () => {
                 href={import.meta.env.VITE_GITHUB_REPO_URL || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-full border border-gray-300 px-6 py-3 transition hover:bg-gray-50"
+                className="flex items-center justify-center gap-2 rounded-full border border-gray-300 px-6 py-3 transition hover:bg-gray-50"
               >
                 View on GitHub <GitBranch className="h-4 w-4" />
               </a>
@@ -53,7 +53,7 @@ const LandingPage = () => {
       {/* Tech Stack Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900">
+          <h2 className="mb-12 text-center text-2xl font-bold text-gray-900 md:text-3xl">
             Powered by featured stack
           </h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
