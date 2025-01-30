@@ -56,16 +56,22 @@ interface TodoFilterControlsProps {
  * Main TodoFilters component that handles filtering of todos
  */
 export const TodoFilters = () => {
-  const search: TodoFiltersType = useSearch({ from: "/(app)/dashboard/todos" });
+  const queryParams: TodoFiltersType = useSearch({
+    from: "/(app)/dashboard/todos",
+  });
+
   const navigate = useNavigate();
 
-  const [searchValue, setSearchValue] = useState(search.search || "");
+  const [searchValue, setSearchValue] = useState(queryParams.search || "");
   const [isOpenFilters, setIsOpenFilters] = useState(false);
   const debouncedSearchTerm = useDebounce(searchValue, DEBOUNCE_DELAY);
 
   // Update search params when search term changes
   useEffect(() => {
-    updateQueryParams({ search: debouncedSearchTerm || undefined });
+    updateQueryParams({
+      search: debouncedSearchTerm || undefined,
+      ...queryParams,
+    });
   }, [debouncedSearchTerm]);
 
   /**
@@ -81,14 +87,14 @@ export const TodoFilters = () => {
     }
 
     const currentParams = {
-      status: search.status,
-      priority: search.priority,
-      isstarred: search.isstarred === true,
-      search: search.search,
-      fromdue: search.fromdue,
-      todue: search.todue,
-      fromcompleted: search.fromcompleted,
-      tocompleted: search.tocompleted,
+      status: queryParams.status,
+      priority: queryParams.priority,
+      isstarred: queryParams.isstarred === true,
+      search: queryParams.search,
+      fromdue: queryParams.fromdue,
+      todue: queryParams.todue,
+      fromcompleted: queryParams.fromcompleted,
+      tocompleted: queryParams.tocompleted,
     };
 
     const newParams = {
@@ -143,14 +149,14 @@ export const TodoFilters = () => {
   };
 
   const hasActiveFilters =
-    search.status ||
-    search.priority ||
-    search.isstarred ||
-    search.fromdue ||
-    search.todue ||
-    search.fromcompleted ||
-    search.tocompleted ||
-    search.search;
+    queryParams.status ||
+    queryParams.priority ||
+    queryParams.isstarred ||
+    queryParams.fromdue ||
+    queryParams.todue ||
+    queryParams.fromcompleted ||
+    queryParams.tocompleted ||
+    queryParams.search;
 
   return (
     <div className="flex w-full flex-wrap items-center gap-4">
@@ -174,7 +180,7 @@ export const TodoFilters = () => {
       {/* Desktop Filters */}
       <div className="hidden flex-wrap items-center gap-4 xl:flex">
         <TodoFilterControls
-          search={search}
+          search={queryParams}
           updateQueryParams={updateQueryParams}
           className="flex w-full flex-wrap items-center gap-4"
         />
@@ -200,7 +206,7 @@ export const TodoFilters = () => {
             </SheetDescription>
           </SheetHeader>
           <TodoFilterControls
-            search={search}
+            search={queryParams}
             updateQueryParams={updateQueryParams}
             className="mt-4 flex w-full flex-col justify-center gap-4"
           />
