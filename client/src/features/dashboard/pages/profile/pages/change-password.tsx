@@ -1,12 +1,3 @@
-// External library imports
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
-
 // Internal component imports
 import { ChangePasswordForm } from "../components/change-password-form";
 
@@ -14,29 +5,24 @@ import { ChangePasswordForm } from "../components/change-password-form";
  * ChangePasswordPage Component
  *
  * A page component that provides users with the ability to change their password
- * through a secure form interface. The component is wrapped in a card layout
- * for consistent styling and better user experience.
+ * through a secure form interface.
  */
 const ChangePasswordPage = () => {
   return (
-    <main
-      className="container mx-auto py-8"
-      role="main"
-      aria-labelledby="change-password-title"
-    >
-      <div className="mx-auto max-w-2xl">
-        <Card>
-          <CardHeader>
-            <CardTitle id="change-password-title">Change Password</CardTitle>
-            <CardDescription>
-              Change your password to keep your account secure.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ChangePasswordForm />
-          </CardContent>
-        </Card>
-      </div>
+    <main className="max-w-2xl" role="main">
+      <section className="mb-8">
+        <header className="mb-8">
+          <div className="flex items-center gap-2">
+            <h1 className="text-xl font-semibold text-neutral-950">
+              Change Password
+            </h1>
+          </div>
+          <p className="text-sm text-neutral-500">
+            Change your password to keep your account secure.
+          </p>
+        </header>
+        <ChangePasswordForm />
+      </section>
     </main>
   );
 };
