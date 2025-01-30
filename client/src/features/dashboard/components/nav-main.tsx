@@ -35,7 +35,7 @@ const LINK_STYLES = {
  */
 export function AppNavMain() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const { open } = useSidebar();
+  const { open, toggleSidebar, isMobile } = useSidebar();
 
   function isRouteActive(item: any, pathname: string) {
     return (
@@ -71,6 +71,7 @@ export function AppNavMain() {
                       MENU_BUTTON_STYLES.activeHover,
                     )}
                     data-active={isActive}
+                    onClick={() => (isMobile ? toggleSidebar() : null)}
                   >
                     <Link
                       to={item.url}
