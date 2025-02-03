@@ -4,10 +4,10 @@ A full-stack React starter template with Vite, Tanstack Suite, Shadcn UI, HonoJs
 - [Modern Full-Stack Starter Template](https://reactvitenstack.vercel.app/)
 
 ## Tech Stack
-https://github.com/KaraBharat/ReactViTenStack/blob/main/client/public/demo/9s80fsdf%3Dsdfsshjgdfh.png
+![Tech Stack](https://github.com/KaraBharat/ReactViTenStack/blob/main/client/public/demo/9s80fsdf%3Dsdfsshjgdfh.png)
 
 ## Features
-https://github.com/KaraBharat/ReactViTenStack/blob/main/client/public/demo/ws0-87rfds%3Dd-9f8sffds0ig.mp4
+![Features](https://github.com/KaraBharat/ReactViTenStack/blob/main/client/public/demo/ws0-87rfds%3Dd-9f8sffds0ig.mp4)
 
 ## Features
 
