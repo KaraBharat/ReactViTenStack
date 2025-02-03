@@ -9,6 +9,8 @@ A full-stack React starter template with Vite, Tanstack Suite, Shadcn UI, HonoJs
 ## Demo
 🎥 [Watch the Demo Video](https://www.bharatkara.com/demo/uisfhgjdf98732.mp4)
 
+![Demo](https://www.bharatkara.com/demo/uisfhgjdf98732.mp4)
+
 ## Features
 
 - [Features](https://reactvitenstack.vercel.app/features)
