@@ -4,7 +4,6 @@
 import { Hono } from "hono";
 import { serve } from "@hono/node-server";
 import { cors } from "hono/cors";
-import { logger } from "hono/logger";
 import { config } from "@/env";
 
 /**
@@ -14,7 +13,7 @@ import auth from "@/routes/auth";
 import todos from "@/routes/todos";
 import users from "@/routes/users";
 import { errorMiddleware } from "@/middleware/error.middleware";
-
+import { customLogger } from "@/helpers/custom.logger";
 /**
  * Application Configuration
  * Creates a new Hono instance with base path '/api'
@@ -25,7 +24,27 @@ const app = new Hono().basePath("/api");
  * Middleware Setup
  * Configures global middleware for logging and CORS
  */
-app.use(logger());
+
+app.use(async (c, next) => {
+  const start = Date.now();
+  const { method, url } = c.req;
+
+  await next();
+
+  const ms = Date.now() - start;
+  const status = c.res.status;
+
+  customLogger(
+    `${url}`,
+    status,
+    method,
+    `Status: ${status}`,
+    `Duration: ${ms}ms`,
+    `IP: ${c.req.header("x-forwarded-for") || c.req.header("x-real-ip") || "unknown"}`,
+    `User-Agent: ${c.req.header("user-agent") || "unknown"}`
+  );
+});
+
 app.use(
   "*",
   cors({
@@ -42,10 +61,7 @@ app.use(
  * Route Configuration
  * Sets up main application routes for authentication, users, and todos
  */
-const routes = app
-            .route("/auth", auth)
-            .route("/users", users)
-            .route("/todos", todos);
+const routes = app.route("/auth", auth).route("/users", users).route("/todos", todos);
 
 /**
  * Error Handling
