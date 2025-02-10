@@ -1,9 +1,7 @@
-// Third-party imports
-import { Loader2 } from "lucide-react";
-
 // Internal imports
 import { TodoForm } from "./components/todo-form";
 import { useTodo } from "./queries/todos.get.queries";
+import { TodoFormSkeleton } from "./components/form-skeleton";
 
 interface TodoEditPageProps {
   todoId: string;
@@ -19,16 +17,7 @@ const TodoEditPage = ({ todoId }: TodoEditPageProps) => {
   const { data: todo, isLoading } = useTodo(todoId);
 
   // Loading state handler
-  if (isLoading) {
-    return (
-      <div className="flex h-[400px] items-center justify-center" role="status">
-        <Loader2
-          className="h-8 w-8 animate-spin text-neutral-600"
-          aria-label="Loading todo data"
-        />
-      </div>
-    );
-  }
+  if (isLoading) return <TodoFormSkeleton />;
 
   // Error state handler
   if (!todo) {
