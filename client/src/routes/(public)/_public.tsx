@@ -39,7 +39,7 @@ function PublicLayout() {
 export const Route = createFileRoute("/(public)/_public")({
   component: PublicLayout,
   // Add error boundary handling for public routes
-  errorComponent: ({ error }) => (
+  errorComponent: ({ error }: { error: Error }) => (
     <div role="alert" className="p-4">
       <h1>Error</h1>
       <pre>{error.message}</pre>

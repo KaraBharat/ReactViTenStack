@@ -1,5 +1,5 @@
 // External library imports
-import { ArrowLeft, Loader2, Pencil, Star, Trash } from "lucide-react";
+import { ArrowLeft, Pencil, Star, Trash } from "lucide-react";
 import { useRouter } from "@tanstack/react-router";
 import { format } from "date-fns";
 
@@ -15,6 +15,7 @@ import { useDeleteTodo } from "./queries/todos.delete.queries";
 import { toast } from "sonner";
 import { Priority } from "./components/priority";
 import { Status } from "./components/status";
+import { TodoDetailSkeleton } from "./components/detail-skeleton";
 
 // Constants
 const DATE_FORMAT = "MMM d, yyyy";
@@ -22,14 +23,6 @@ const DATE_FORMAT = "MMM d, yyyy";
 interface TodoDetailPageProps {
   todoId: string;
 }
-
-// Component sections for better organization
-const LoadingSpinner = () => (
-  <div className="flex h-[400px] items-center justify-center" role="status">
-    <Loader2 className="h-8 w-8 animate-spin text-neutral-600" />
-    <span className="sr-only">Loading todo details...</span>
-  </div>
-);
 
 const DetailField = ({
   label,
@@ -91,7 +84,7 @@ const TodoDetailPage = ({ todoId }: TodoDetailPageProps) => {
     });
   };
 
-  if (isLoading) return <LoadingSpinner />;
+  if (isLoading) return <TodoDetailSkeleton />;
 
   const todoData = todo?.data;
 

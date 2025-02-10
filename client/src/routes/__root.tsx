@@ -39,7 +39,7 @@ const RootLayout = () => {
 export const Route = createRootRoute({
   component: RootLayout,
   // Add error boundary handling
-  errorComponent: ({ error }) => (
+  errorComponent: ({ error }: { error: Error }) => (
     <div role="alert" className="p-4">
       <h1>Error</h1>
       <pre>{error.message}</pre>

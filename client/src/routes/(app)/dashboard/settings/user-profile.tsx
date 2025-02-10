@@ -24,7 +24,7 @@ export const Route = createFileRoute("/(app)/dashboard/settings/user-profile")({
     </main>
   ),
   // Add error boundary handling specific to profile settings
-  errorComponent: ({ error }) => (
+  errorComponent: ({ error }: { error: Error }) => (
     <div
       role="alert"
       className="flex min-h-screen items-center justify-center p-4"

@@ -46,7 +46,7 @@ function TodosLayout() {
 export const Route = createFileRoute("/(app)/dashboard/todos")({
   component: TodosLayout,
   // Add error boundary handling for todos section
-  errorComponent: ({ error }) => (
+  errorComponent: ({ error }: { error: Error }) => (
     <div role="alert" className="p-4">
       <h2 className="text-xl font-bold">Error Loading Todos</h2>
       <pre className="mt-4">{error.message}</pre>

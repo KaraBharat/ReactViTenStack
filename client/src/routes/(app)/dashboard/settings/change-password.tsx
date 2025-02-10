@@ -26,7 +26,7 @@ export const Route = createFileRoute(
     </main>
   ),
   // Add error boundary handling specific to password change
-  errorComponent: ({ error }) => (
+  errorComponent: ({ error }: { error: Error }) => (
     <div
       role="alert"
       className="flex min-h-screen items-center justify-center p-4"

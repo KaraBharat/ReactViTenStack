@@ -24,7 +24,7 @@ export const Route = createFileRoute("/(auth)/register")({
     </main>
   ),
   // Add error boundary handling specific to registration
-  errorComponent: ({ error }) => (
+  errorComponent: ({ error }: { error: Error }) => (
     <div
       role="alert"
       className="flex min-h-screen items-center justify-center p-4"

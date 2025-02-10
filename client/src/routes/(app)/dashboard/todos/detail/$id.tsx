@@ -29,7 +29,7 @@ export const Route = createFileRoute("/(app)/dashboard/todos/detail/$id")({
     );
   },
   // Add error boundary handling specific to todo details
-  errorComponent: ({ error }) => (
+  errorComponent: ({ error }: { error: Error }) => (
     <div
       role="alert"
       className="flex min-h-screen items-center justify-center p-4"
@@ -39,5 +39,5 @@ export const Route = createFileRoute("/(app)/dashboard/todos/detail/$id")({
         <pre className="mt-4">{error.message}</pre>
       </div>
     </div>
-  ),
+  )
 });

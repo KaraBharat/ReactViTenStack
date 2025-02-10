@@ -48,7 +48,7 @@ function DashboardLayout() {
 export const Route = createFileRoute("/(app)/dashboard")({
   component: DashboardLayout,
   // Add error boundary handling for dashboard
-  errorComponent: ({ error }) => (
+  errorComponent: ({ error }: { error: Error }) => (
     <div
       role="alert"
       className="flex min-h-screen items-center justify-center p-4"

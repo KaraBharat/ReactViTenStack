@@ -50,7 +50,7 @@ function SettingsLayout() {
 export const Route = createFileRoute("/(app)/dashboard/settings")({
   component: SettingsLayout,
   // Add error boundary handling for settings section
-  errorComponent: ({ error }) => (
+  errorComponent: ({ error }: { error: Error }) => (
     <div role="alert" className="p-4">
       <h2 className="text-xl font-bold">Error Loading Settings</h2>
       <pre className="mt-4">{error.message}</pre>

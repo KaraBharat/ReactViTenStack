@@ -20,7 +20,7 @@ export const Route = createFileRoute("/(app)/dashboard/todos/")({
     </main>
   ),
   // Add error boundary handling specific to todo list
-  errorComponent: ({ error }) => (
+  errorComponent: ({ error }: { error: Error }) => (
     <div
       role="alert"
       className="flex min-h-screen items-center justify-center p-4"

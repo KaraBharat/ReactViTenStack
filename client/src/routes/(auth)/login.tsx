@@ -37,7 +37,7 @@ export const Route = createFileRoute("/(auth)/login")({
     };
   },
   // Add error boundary handling specific to login
-  errorComponent: ({ error }) => (
+  errorComponent: ({ error }: { error: Error }) => (
     <div
       role="alert"
       className="flex min-h-screen items-center justify-center p-4"
