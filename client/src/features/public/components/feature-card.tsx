@@ -27,7 +27,7 @@ export const FeatureCard = ({ icon: Icon, title, description }: Props) => {
     <div className="group relative overflow-hidden rounded-2xl bg-neutral-50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
       <div className="relative">
         <div className="mb-4 inline-flex rounded-lg bg-neutral-100 p-3">
-          <Icon className="h-6 w-6 text-neutral-950" />
+          <Icon data-icon className="size-6 text-neutral-950" />
         </div>
         <h3 className="mb-3 text-xl font-bold text-neutral-950">{title}</h3>
         <p className="text-neutral-600">{description}</p>

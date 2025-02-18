@@ -76,7 +76,7 @@ const LandingPage = () => {
               to build modern web applications.
             </p>
           </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 **:data-icon:size-12 **:data-icon:text-sky-600 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 icon: Code,

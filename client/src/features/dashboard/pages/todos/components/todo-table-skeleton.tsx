@@ -22,7 +22,7 @@ export const TodoTableSkeleton = ({ headerCount, rowCount }: SkeletonProps) => (
             role="cell"
             aria-busy="true"
           >
-            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-8 w-full" />
           </TableCell>
         ))}
       </TableRow>
