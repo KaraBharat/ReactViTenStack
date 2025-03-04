@@ -14,6 +14,7 @@ import { authService } from "../service/auth.service";
 export const useAuthUser = () => {
   return useQuery({
     queryKey: authKeys.me(),
+    retry: false,
     queryFn: async () => {
       try {
         const response = await client.api.auth.me.$get();
