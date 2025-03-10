@@ -184,13 +184,15 @@ export class TodosService {
    * Creates a new todo
    */
   async createTodo(values: NewTodo, userId: string) {
+    const completedAt = this.determineCompletedAt(values.status, null);
+
     const [data] = await db
       .insert(todos)
       .values({
         ...values,
         userId,
         dueDate: values.dueDate ? new Date(values.dueDate) : null,
-        completedAt: values.completedAt ? new Date(values.completedAt) : null,
+        completedAt,
       })
       .returning();
 
